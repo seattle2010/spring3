@@ -3,6 +3,7 @@ package com.account.service;
 import com.account.dao.AccountDao;
 import lombok.Setter;
 
+//@Transactional
 public class AccountServiceImpl implements AccountService {
 	@Setter
 	private AccountDao accountDao;

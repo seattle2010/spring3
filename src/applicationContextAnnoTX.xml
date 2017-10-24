@@ -16,9 +16,9 @@
 	<!-- 配置C3P0的连接池 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="com.mysql.jdbc.Driver"/>
-		<property name="jdbcUrl" value="jdbc:mysql:///spring_day03"/>
+		<property name="jdbcUrl" value="jdbc:mysql:///jdbc"/>
 		<property name="user" value="root"/>
-		<property name="password" value="root"/>
+		<property name="password" value="1234"/>
 	</bean>
 	
 	<!-- 配置平台事务管理器 -->
@@ -30,11 +30,11 @@
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	
 	<!-- 配置业务层和持久层 -->
-	<bean id="accountService" class="com.itheima.demo3.AccountServiceImpl">
+	<bean id="accountService" class="com.account.service.AccountServiceImpl">
 		<property name="accountDao" ref="accountDao"/>
 	</bean>
 	
-	<bean id="accountDao" class="com.itheima.demo3.AccountDaoImpl">
+	<bean id="accountDao" class="com.account.dao.AccountDaoImpl">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	
