@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"> <!-- bean definitions here -->
+	
+	<!-- 配置客户的dao -->
+	<bean id="customerDao" class="com.aop.dao.CustomerDaoImpl"/>
+	<!-- 编写切面类配置好 -->
+	<bean id="myAspectXml" class="com.aop.dao.MyAspectXml"/>
+	<!-- 配置AOP -->
+
+	<!-- 配置切面类：切入点 + 通知（类型） -->
+	<!-- 配置的前置通知，save方法执行之前，增强的方法会执行 -->
+	<!-- 切入点的表达式：execution(public void com.itheima.demo3.CustomerDaoImpl.save()) -->
+
+	<!-- 切入点的表达式
+    1. execution()	固定的，不能不写
+    2. public 可以省略不写
+    3. void，返回值可以出现 * 表示任意的返回值，返回值类型不能不写
+    4. 可以使用 * 代替的，不能不编写的，简写方式：*..*方法
+    5. *DaoImpl
+    6. 方法 save*
+    7. 方法的参数：
+-->
+	<!-- <aop:before method="log" pointcut="execution(public void com.itheima.demo3.CustomerDaoImpl.save())"/> -->
+	<!-- public 可以省略不写 -->
+	<!-- <aop:before method="log" pointcut="execution(void com.itheima.demo3.CustomerDaoImpl.save())"/> -->
+
+	<!-- void，返回值可以出现 * 表示任意的返回值，返回值类型不能不写 -->
+	<!-- <aop:before method="log" pointcut="execution(* com.aop.dao.CustomerDaoImpl.save())"/> -->
+
+	<!-- 包名可以使用 * 代替，不能不写 -->
+	<!-- <aop:before method="log" pointcut="execution(* com.aop.*.CustomerDaoImpl.save())"/> -->
+
+	<!-- 包的简写的方式，任意的包的结构 -->
+	<!-- <aop:before method="log" pointcut="execution(* *..*.CustomerDaoImpl.save())"/> -->
+
+	<!-- 编写类的写法 -->
+	<!-- <aop:before method="log" pointcut="execution(* *..*.*DaoImpl.save())"/> -->
+
+	<!-- 方法编写 -->
+	<!-- <aop:before method="log" pointcut="execution(* *..*.*DaoImpl.save*())"/> -->
+
+	<!-- 参数列表：出现一个*，表示一个参数，任意参数使用 .. -->
+	<aop:config>
+		<aop:aspect ref="myAspectXml">
+			<aop:before method="beforeLog" pointcut="execution(public void com.aop.dao.CustomerDaoImpl.save())"></aop:before>
+		</aop:aspect>
+	</aop:config>
+	<!-- 配置AOP -->
+<!--	<aop:config>
+		<aop:aspect ref="myAspectXml">
+			&lt;!&ndash; <aop:before method="log" pointcut="execution(public void com.itheima.demo3.CustomerDaoImpl.save())"/> &ndash;&gt;
+
+			&lt;!&ndash; 配置最终通知
+			<aop:after method="after" pointcut="execution(public void com.itheima.demo3.CustomerDaoImpl.save())"/>
+			&ndash;&gt;
+
+			&lt;!&ndash; <aop:after-returning method="afterReturn" pointcut="execution(public void com.itheima.demo3.CustomerDaoImpl.save())"/> &ndash;&gt;
+
+			&lt;!&ndash; 环绕通知 &ndash;&gt;
+			<aop:around method="around" pointcut="execution(public void com.itheima.demo3.CustomerDaoImpl.save())"/>
+		</aop:aspect>
+	</aop:config>-->
+</beans>

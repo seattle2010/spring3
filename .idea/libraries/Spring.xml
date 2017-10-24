@@ -1,0 +1,25 @@
+<component name="libraryTable">
+  <library name="Spring" type="spring">
+    <CLASSES>
+      <root url="jar://C:/spring的jar包/com.springsource.com.mchange.v2.c3p0-0.9.1.2.jar!/" />
+      <root url="jar://C:/spring的jar包/com.springsource.org.aopalliance-1.0.0.jar!/" />
+      <root url="jar://C:/spring的jar包/com.springsource.org.apache.commons.logging-1.1.1.jar!/" />
+      <root url="jar://C:/spring的jar包/com.springsource.org.apache.log4j-1.2.15.jar!/" />
+      <root url="jar://C:/spring的jar包/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar!/" />
+      <root url="jar://C:/spring的jar包/mysql-connector-java-5.1.7-bin.jar!/" />
+      <root url="jar://C:/spring的jar包/spring-aop-4.2.4.RELEASE.jar!/" />
+      <root url="jar://C:/spring的jar包/spring-aspects-4.2.4.RELEASE.jar!/" />
+      <root url="jar://C:/spring的jar包/spring-beans-4.2.4.RELEASE.jar!/" />
+      <root url="jar://C:/spring的jar包/spring-context-4.2.4.RELEASE.jar!/" />
+      <root url="jar://C:/spring的jar包/spring-core-4.2.4.RELEASE.jar!/" />
+      <root url="jar://C:/spring的jar包/spring-expression-4.2.4.RELEASE.jar!/" />
+      <root url="jar://C:/spring的jar包/spring-jdbc-4.2.4.RELEASE.jar!/" />
+      <root url="jar://C:/spring的jar包/spring-test-4.2.4.RELEASE.jar!/" />
+      <root url="jar://C:/spring的jar包/spring-tx-4.2.4.RELEASE.jar!/" />
+      <root url="jar://C:/lombok.jar!/" />
+      <root url="jar://C:/mysql-connector-java-5.1.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
